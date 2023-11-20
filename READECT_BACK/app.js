@@ -13,9 +13,8 @@ const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const cookieParser = require("cookie-parser");
-const {
-  getOtherReader,
-} = require("./controllers/otherReaderController");
+const cors = require("cors");
+const { getOtherReader } = require("./controllers/otherReaderController");
 
 const limiter = rateLimit({
   max: 1000,
@@ -27,6 +26,15 @@ const limiter = rateLimit({
   },
 });
 app.use("/api", limiter);
+
+const corsOpts = {
+  origin: "https://readect-updated-frontend.vercel.app/",
+  credentials: true,
+  methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+  exposedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOpts));
 
 app.use(cookieParser());
 
@@ -45,7 +53,7 @@ app.use("/api/v1/reader/shortStory", shortStoryRoutes);
 app.use("/api/v1/reader/article", articleRoutes);
 app.use("/api/v1/reader/reviews", reviewRoute);
 
-app.get('/api/v1/reader/otheruser/:id', getOtherReader);
+app.get("/api/v1/reader/otheruser/:id", getOtherReader);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404));
