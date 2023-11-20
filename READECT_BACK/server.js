@@ -8,8 +8,8 @@ const corsOpts = {
   origin: "https://readect-updated-frontend.vercel.app/",
   credentials: true,
   methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
-  // allowedHeaders: ['Content-Type'],
-  // exposedHeaders: ['Content-Type']
+  allowedHeaders: ["Content-Type"],
+  exposedHeaders: ["Content-Type"],
 };
 app.use(cors(corsOpts));
 
