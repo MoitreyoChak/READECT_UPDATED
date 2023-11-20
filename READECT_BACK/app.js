@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require('cors')
 const readerRoute = require("./routes/readerRoute");
 const poemRoutes = require("./routes/poemRoutes");
 const bookRoutes = require("./routes/bookRoutes");
@@ -25,29 +26,9 @@ const limiter = rateLimit({
     message: "Too many requests from this IP. Please try again in an hour",
   },
 });
+
+app.use(cors({ origin: '*' }))
 app.use("/api", limiter);
-
-// const corsOpts = {
-//   origin: "https://readect-updated-frontend.vercel.app/",
-//   credentials: true,
-//   methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
-//   allowedHeaders: ["Content-Type"],
-//   exposedHeaders: ["Content-Type"],
-// };
-// app.use(cors(corsOpts));
-
-app.use(function (req, res, next) {
-  req.header(
-    "Access-Control-Allow-Origin",
-    "https://readect-updated-frontend.vercel.app/"
-  ); // '*' allows any origin, you can reqtrict it to specific origins
-  req.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH");
-  req.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  next();
-});
 
 app.use(cookieParser());
 

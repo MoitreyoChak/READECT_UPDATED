@@ -19,7 +19,6 @@ const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
 const MyProfileApi = "/api/v1/reader/";
 
 axios.defaults.baseURL = "https://readect-updated-api.vercel.app";
-axios.defaults.withCredentials = true;
 
 const App = () => {
   const { checkLogin, loggedInStatus, getMyProfile } = useProfileContext();
