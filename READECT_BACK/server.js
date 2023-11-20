@@ -1,8 +1,10 @@
 const app = require("./app");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 
 // const cookie_parser = require("cookie-parser");
+app.use(cors());
 
 const Atlas =
   "mongodb+srv://moitreyo:codinghabits365@cluster1.oivomfg.mongodb.net/readerInsect?retryWrites=true&w=majority";
