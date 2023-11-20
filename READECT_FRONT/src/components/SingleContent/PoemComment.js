@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillSendFill } from "react-icons/bs";
-import { useSingleContext } from "../../context/SingleContext";
 import axios from "axios";
 
-const form = "https://formspree.io/f/mbjvlrbj";
+// const form = "https://formspree.io/f/mbjvlrbj";
 const url = "/api/v1/reader";
 const allCommentUrl = "/api/v1/reader/reviews";
 
 function PoemComment({ content, id, type }) {
   const check = content ? content[0].comments : 0;
-  console.log(check);
 
   //const { isLoading, comments, getPoemComments, userId } = useSingleContext();
   // console.log(comments);

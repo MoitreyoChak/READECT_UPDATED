@@ -129,12 +129,12 @@ const AppReducer = (state, action) => {
 
 };
 
-const tagCompare = (a = [], b = []) => {
-  let result = true;
-  a.forEach((ele) => {
-    result = b.includes(ele);
-  });
-  return result;
-};
+// const tagCompare = (a = [], b = []) => {
+//   let result = true;
+//   a.forEach((ele) => {
+//     result = b.includes(ele);
+//   });
+//   return result;
+// };
 
 export default AppReducer;

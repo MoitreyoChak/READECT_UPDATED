@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSingleContext } from "../context/SingleContext";
 import SinglePoemImage from "../components/SingleContent/SinglePoemImage";
@@ -7,7 +7,6 @@ import PoemComment from "../components/SingleContent/PoemComment";
 import Loading from "../components/Loading";
 import Pagination from "../components/SingleContent/Pagination";
 import "../style/SinglePoem.css";
-import Navs from "../components/HomePage/Navs";
 import Follow from "./Follow";
 import { useProfileContext } from "../context/ProfileContext";
 

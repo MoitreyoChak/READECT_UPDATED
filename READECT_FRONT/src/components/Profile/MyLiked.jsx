@@ -1,8 +1,6 @@
-import React from 'react'
 import { useProfileContext } from '../../context/ProfileContext'
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import { FaRegHandPointRight } from 'react-icons/fa';
 import { BsArrowReturnRight } from 'react-icons/bs';
 
 function MyLiked() {

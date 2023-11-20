@@ -1,5 +1,3 @@
-import React from 'react'
-import Carousel from 'react-bootstrap/Carousel';
 import { NavLink } from 'react-router-dom';
 
 function HeroSection() {

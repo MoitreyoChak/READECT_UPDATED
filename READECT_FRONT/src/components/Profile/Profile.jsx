@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { BsPeopleFill } from "react-icons/ai";
+import { useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
 import { useProfileContext } from '../../context/ProfileContext';
-import { AwesomeButton } from 'react-awesome-button';
 import { BiGroup, BiLogOut } from 'react-icons/bi';
 import { IoChevronBack } from 'react-icons/io5';
 
