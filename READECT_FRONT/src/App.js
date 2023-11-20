@@ -16,9 +16,10 @@ import OtherProfile from "./components/Profile/OtherProfile";
 import axios from "axios";
 
 const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
-const MyProfileApi = "/api/v1/reader/"
+const MyProfileApi = "/api/v1/reader/";
 
-axios.defaults.baseURL = "https://readect-updated-api.vercel.app"
+axios.defaults.baseURL = "https://readect-updated-api.vercel.app";
+axios.defaults.withCredentials = true;
 
 const App = () => {
   const { checkLogin, loggedInStatus, getMyProfile } = useProfileContext();
@@ -34,7 +35,7 @@ const App = () => {
       <Toaster />
       <Navs />
       <Routes>
-        {loggedInStatus ?
+        {loggedInStatus ? (
           <>
             <Route path="/" element={<Home />} />
             <Route path="/type/:contents" element={<Contents />} />
@@ -47,17 +48,17 @@ const App = () => {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/profile/library" element={<ReadLate />} />
             <Route path="/otherprofile/:id" element={<OtherProfile />} />
-            <Route path='*' element={<>Error</>} />
-          </> :
+            <Route path="*" element={<>Error</>} />
+          </>
+        ) : (
           <>
             <Route path="/" element={<Home />} />
             <Route path="/type/:contents" element={<Contents />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Registration />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
             <Route path="*" element={<Login />} />
           </>
-        }
-
+        )}
 
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/contact" element={<Contact />} /> */}
