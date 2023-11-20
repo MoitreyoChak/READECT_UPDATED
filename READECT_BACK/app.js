@@ -27,7 +27,7 @@ const limiter = rateLimit({
   },
 });
 
-app.use(cors({ origin: 'https://readect-updated-frontend.vercel.app/' }))
+app.use(cors({ origin: '*' }))
 app.use("/api", limiter);
 
 app.use(cookieParser());
