@@ -2,7 +2,6 @@
   "name": "ecom",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://readect-updated-api.vercel.app",
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
     "@testing-library/jest-dom": "^5.16.4",
