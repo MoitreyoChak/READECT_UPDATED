@@ -14,10 +14,13 @@ import { Toaster } from "react-hot-toast";
 import Navs from "./components/HomePage/Navs";
 import ReadLate from "./pages/ReadLate";
 import OtherProfile from "./components/Profile/OtherProfile";
+import axios from "axios";
 
 const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
 const MyProfileApi = "/api/v1/reader/"
 const sd = { "proxy": "http://localhost:3737" };
+
+axios.defaults.baseURL = "https://readect-updated-api.vercel.app"
 
 const App = () => {
   const { checkLogin, loggedInStatus, getMyProfile } = useProfileContext();
