@@ -1,9 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import UploadEle from '../components/Profile/UploadEle';
 import "../style/Profile.css"
-import { NavLink } from 'react-router-dom';
-import { MdAdd } from 'react-icons/md';
 import BookmarkEle from '../components/BookmarkEle';
 
 const bookmarkAPI = "/api/v1/reader/"

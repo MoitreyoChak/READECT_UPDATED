@@ -1,5 +1,4 @@
 import axios from 'axios'
-import React from 'react'
 import { toast } from 'react-hot-toast'
 import { AiFillDelete } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
@@ -15,7 +14,7 @@ function UploadEle({ title, type, id }) {
     const DoDelete = async (e) => {
         e.preventDefault();
         try {
-            const resp = await axios.delete(`${deleteAPI}/${type}/update/${id}`);
+            await axios.delete(`${deleteAPI}/${type}/update/${id}`);
             getMyProfile(MyProfileAPI);
             toast.success(`${type} deleted`)
         } catch (error) {

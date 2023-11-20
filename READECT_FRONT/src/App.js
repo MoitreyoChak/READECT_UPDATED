@@ -9,7 +9,6 @@ import UpdatePoemContent from "./components/UpdatePoemContent";
 import Upload from "./pages/Upload";
 import ProfilePage from "./pages/ProfilePage";
 import { useProfileContext } from "./context/ProfileContext";
-import RequestLogin from "./components/RequestLogin";
 import { Toaster } from "react-hot-toast";
 import Navs from "./components/HomePage/Navs";
 import ReadLate from "./pages/ReadLate";
@@ -18,7 +17,6 @@ import axios from "axios";
 
 const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
 const MyProfileApi = "/api/v1/reader/"
-const sd = { "proxy": "http://localhost:3737" };
 
 axios.defaults.baseURL = "https://readect-updated-api.vercel.app"
 

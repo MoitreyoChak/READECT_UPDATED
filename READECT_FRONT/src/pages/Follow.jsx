@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSingleContext } from '../context/SingleContext'
 import { useProfileContext } from '../context/ProfileContext';
 import { NavLink } from 'react-router-dom';
@@ -13,7 +13,7 @@ function Follow() {
     console.log(profile.followings);
     const [follow, SetFollow] = useState(false);
     const DoFollow = (e) => {
-        const check = profile?.followings?.map((ele, i) => {
+        profile?.followings?.map((ele, i) => {
             SetFollow(false);
             if (ele === content?.userId) {
                 SetFollow(true);

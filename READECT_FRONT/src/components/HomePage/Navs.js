@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-// import NavLink from 'react-bootstrap/esm/NavLink';
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 //React icons
 import { VscAccount } from "react-icons/vsc";
@@ -13,13 +8,12 @@ import { IoAddCircleSharp, IoAddCircleOutline } from "react-icons/io5";
 
 
 import { useProfileContext } from "../../context/ProfileContext";
-import toast, { Toaster } from "react-hot-toast";
 import { BsBookmarkCheck, BsChatDots, BsChatDotsFill, BsFillBookmarkCheckFill } from "react-icons/bs";
 import { RiAccountCircleFill, RiAccountCircleLine } from "react-icons/ri";
 import { BiMoon, BiSolidMoon } from "react-icons/bi";
 
-const LogoutAPI = "/api/v1/reader/logout";
-const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
+// const LogoutAPI = "/api/v1/reader/logout";
+// const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
 
 const Navs = () => {
   const location = useLocation();

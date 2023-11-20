@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { BiEdit } from "react-icons/bi";
-import { AiFillDelete, AiFillFileAdd, AiOutlineUserAdd } from "react-icons/ai";
 
 import { MdAdd } from 'react-icons/md';
-import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { useProfileContext } from "../../context/ProfileContext";
-import { RiDeleteBack2Fill } from "react-icons/ri";
 import UploadEle from "./UploadEle";
 
 const MyUploads = () => {

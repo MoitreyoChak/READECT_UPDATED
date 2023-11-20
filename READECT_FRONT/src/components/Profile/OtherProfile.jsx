@@ -1,13 +1,9 @@
-//  import React from 'react'
-import React, { useEffect, useState } from 'react'
-import { BsPeopleFill } from "react-icons/ai";
+import { useEffect, useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
 import { useProfileContext } from '../../context/ProfileContext';
-import { AwesomeButton } from 'react-awesome-button';
-import { BiGroup, BiLogOut } from 'react-icons/bi';
+import { BiGroup } from 'react-icons/bi';
 import { IoChevronBack } from 'react-icons/io5';
 
-import { toast } from 'react-hot-toast';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import MyUploads from './MyUploads';
 import MyLiked from './MyLiked';
@@ -15,8 +11,8 @@ import MyLiked from './MyLiked';
 const img = "https://cdn4.vectorstock.com/i/1000x1000/40/53/passport-photo-of-young-handsome-man-close-up-vector-21284053.jpg";
 
 const ShowFollowAPI = "/api/v1/reader"
-const LogoutAPI = "/api/v1/reader/logout";
-const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
+// const LogoutAPI = "/api/v1/reader/logout";
+// const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";
 
 function OtherProfile() {
     const { id } = useParams();

@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useProfileContext } from "../context/ProfileContext";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import "../style/LoginRegis.css";
 import { BsFillPersonFill, BsPerson } from "react-icons/bs";
 import { BiSolidLockAlt } from "react-icons/bi";
-import { VscAccount } from "react-icons/vsc";
-import { MdAccountCircle } from "react-icons/md";
 
 const LoginAPI = "/api/v1/reader/login";
 const LoggedCheckAPI = "/api/v1/reader/ifLoggedIn";

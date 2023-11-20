@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Stars from "./Stars";
+import { useEffect, useState } from "react";
 import { useSingleContext } from "../../context/SingleContext";
 import { useProfileContext } from "../../context/ProfileContext";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { CheckmarkIcon, toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { BsBookmarkCheck, BsFillBookmarkCheckFill } from "react-icons/bs";
 
 const likeAPI = "/api/v1/reader";
@@ -23,18 +22,18 @@ function SinglePoemContent({ name, description, author }) {
 
 
   const checkLike = async () => {
-    if (type == "poem") {
+    if (type === "poem") {
       for (let i = 0; i < profile?.likedPoems?.length; i++) {
-        if (profile?.likedPoems[i]?.id == content?._id) {
+        if (profile?.likedPoems[i]?.id === content?._id) {
           setLike(true);
           return;
         }
         setLike(false);
       }
     }
-    else if (type == "article") {
+    else if (type === "article") {
       for (let i = 0; i < profile?.likedArticles?.length; i++) {
-        if (profile?.likedArticles[i]?.id == content?._id) {
+        if (profile?.likedArticles[i]?.id === content?._id) {
           setLike(true);
           return;
         }
@@ -42,9 +41,9 @@ function SinglePoemContent({ name, description, author }) {
       }
 
     }
-    else if (type == "shortstory") {
+    else if (type === "shortstory") {
       for (let i = 0; i < profile?.likedShortStories?.length; i++) {
-        if (profile?.likedShortStories[i]?.id == content?._id) {
+        if (profile?.likedShortStories[i]?.id === content?._id) {
           setLike(true);
           return;
         }
@@ -54,18 +53,18 @@ function SinglePoemContent({ name, description, author }) {
   }
 
   const checkBookmark = async () => {
-    if (type == "poem") {
+    if (type === "poem") {
       for (let i = 0; i < profile?.readLater?.poems?.length; i++) {
-        if (profile?.readLater?.poems[i] == content?._id) {
+        if (profile?.readLater?.poems[i] === content?._id) {
           setBookmark(true);
           return;
         }
         setBookmark(false);
       }
     }
-    else if (type == "article") {
+    else if (type === "article") {
       for (let i = 0; i < profile?.readLater?.articles.length; i++) {
-        if (profile?.readLater?.articles[i] == content?._id) {
+        if (profile?.readLater?.articles[i] === content?._id) {
           setBookmark(true);
           return;
         }
@@ -73,9 +72,9 @@ function SinglePoemContent({ name, description, author }) {
       }
 
     }
-    else if (type == "shortstory") {
+    else if (type === "shortstory") {
       for (let i = 0; i < profile?.readLater?.shortStories?.length; i++) {
-        if (profile?.likedShortStories[i]?.id == content?._id) {
+        if (profile?.likedShortStories[i]?.id === content?._id) {
           setBookmark(true);
           return;
         }
@@ -105,7 +104,7 @@ function SinglePoemContent({ name, description, author }) {
     }
     else {
       try {
-        const resp = await axios.post(`${likeAPI}/${type}/like/${id}`);
+        await axios.post(`${likeAPI}/${type}/like/${id}`);
         checkLike();
         toast.success(`${type} liked`);
         setLike(true);
@@ -119,7 +118,7 @@ function SinglePoemContent({ name, description, author }) {
     e.preventDefault();
     if (bookmark == false) {
       try {
-        const resp = await axios.post(`${bookmarkAPI}/${type}/readLater/${id}`);
+        await axios.post(`${bookmarkAPI}/${type}/readLater/${id}`);
         checkBookmark();
         toast.success(`Bookmark Added`)
         setBookmark(true);
